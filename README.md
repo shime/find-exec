@@ -1,5 +1,7 @@
 # find-exec
 
+[![Build Status](https://travis-ci.org/shime/find-exec.svg)](https://travis-ci.org/shime/find-exec)
+
 Takes a list of shell commands and returns the first available.
 
 ## Examples
