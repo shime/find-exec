@@ -1,6 +1,6 @@
 {
   "name": "find-exec",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Finds first available shell command from a list.",
   "main": "index.js",
   "scripts": {
