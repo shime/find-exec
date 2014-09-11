@@ -2,7 +2,7 @@ var expect = require("expect.js")
 var shell = require('./../')
 
 it("returns the first command available", function(){
-  var result = shell(["./test/shims/foo", "./test/shims/baz", "./test/shims/bar"])
+  var result = shell("./test/shims/foo", "./test/shims/baz", "./test/shims/bar")
   expect(result).to.be('./test/shims/foo')
 })
 
