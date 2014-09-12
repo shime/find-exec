@@ -4,7 +4,7 @@
 
 Takes a list of shell commands and returns the first available.
 
-## Examples
+## examples
 
     $ which mplayer
     which: no mplayer
@@ -22,10 +22,10 @@ var command = require('find-exec')(["mplayer"])
 console.log(command) // null
 ```
 
-## Installation
+## installation
 
     npm install find-exec
 
-## License
+## license
 
 MIT
