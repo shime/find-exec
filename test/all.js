@@ -11,6 +11,6 @@ it("is okay if one of the bins is missing", function(){
   expect(result).to.be('./test/shims/bar')
 })
 
-it("raises errors if command was not found", function(){
-  expect(function () {shell(["./test/shims/baz"])}).to.throwException()
+it("returns null if command was not found", function(){
+  expect(shell(["./test/shims/baz"])).to.be(null)
 })

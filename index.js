@@ -12,8 +12,7 @@ module.exports = function(){
     try {
       exec(command)
     } catch (err) {
-      if (i === (commands.length - 1))
-        throw new Error("Couldn't find a suitable shell command")
+      command = null
 
       continue
     }
