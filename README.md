@@ -18,7 +18,8 @@ console.log(command) // afplay
 ```
 
 ```javascript
-require('find-exec')(["mplayer"]) // will throw error, none of commands is available
+var command = require('find-exec')(["mplayer"])
+console.log(command) // null
 ```
 
 ## Installation
