@@ -1,5 +1,4 @@
-var child_process = require("child_process")
-  , exec = require('exec-sync')
+var exec = require('exec-sync')
 
 module.exports = function(){
   var self = this
