@@ -29,6 +29,6 @@
     "mocha": "^1.21.4"
   },
   "dependencies": {
-    "execSync: "^1.0.2"
+    "execSync": "^1.0.2"
   }
 }
