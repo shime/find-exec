@@ -1,22 +1,16 @@
-var exec = require('exec-sync')
+var exec = require('execSync').exec
 
 module.exports = function(){
   var self = this
     , commands = Array.isArray(arguments[0]) ? arguments[0] : Array.prototype.slice.apply(arguments)
-    , command
+    , command = null
 
-  for(i = 0; i < commands.length; i++){
-    command = commands[i]
-
-    try {
-      exec(command)
-    } catch (err) {
-      command = null
-
-      continue
+  commands.some(function(c){
+    if (exec(c).code == 0){
+      command = c
+      return true
     }
-    break
-  }
+  })
 
-  return command;
+  return command
 }
