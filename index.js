@@ -1,4 +1,5 @@
-var exec = require('execSync').exec
+var exec     = require('execSync').exec,
+    platform = require('os').platform()
 
 module.exports = function(){
   var self = this
@@ -6,11 +7,19 @@ module.exports = function(){
     , command = null
 
   commands.some(function(c){
-    if (exec(c).code == 0){
+    if (exec(findCommand(c)).code == 0){
       command = c
       return true
     }
   })
 
   return command
+}
+
+function findCommand(command){
+  if (/win/.test(platform)){
+    return "where " + command
+  } else {
+    return "command -v " + command + " >/dev/null 2>&1"
+  }
 }
