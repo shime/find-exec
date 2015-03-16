@@ -17,7 +17,7 @@ module.exports = function(){
 }
 
 function findCommand(command){
-  if (/win/.test(platform)){
+  if (/^win/.test(platform)){
     return "where " + command
   } else {
     return "command -v " + command + " >/dev/null 2>&1"
