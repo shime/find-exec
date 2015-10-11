@@ -1,4 +1,4 @@
-var exec     = require('execSync').exec,
+var exec     = require('sync-exec'),
     platform = require('os').platform()
 
 module.exports = function(){
@@ -7,7 +7,7 @@ module.exports = function(){
     , command = null
 
   commands.some(function(c){
-    if (exec(findCommand(c)).code == 0){
+    if (exec(findCommand(c)).status == 0){
       command = c
       return true
     }
