@@ -1,13 +1,13 @@
-var exec     = require('sync-exec'),
-    platform = require('os').platform()
+var spawn = require('child_process').spawnSync
+var platform = require('os').platform()
 
 module.exports = function(){
-  var self = this
-    , commands = Array.isArray(arguments[0]) ? arguments[0] : Array.prototype.slice.apply(arguments)
-    , command = null
+  var commands = Array.isArray(arguments[0]) ? arguments[0] : Array.prototype.slice.apply(arguments)
+  var command = null
 
   commands.some(function(c){
-    if (exec(findCommand(c)).status == 0){
+    var finder = findCommand()
+    if (spawn(finder.cmd, finder.args.concat([ c ])).status === 0){
       command = c
       return true
     }
@@ -16,10 +16,10 @@ module.exports = function(){
   return command
 }
 
-function findCommand(command){
-  if (/^win/.test(platform)){
-    return "where " + command
+function findCommand(){
+  if (/^win/.test(platform)) {
+    return { cmd: "where", args: [] }
   } else {
-    return "command -v " + command + " >/dev/null 2>&1"
+    return { cmd: "command", args: ['-v'] }
   }
 }
