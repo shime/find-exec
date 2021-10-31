@@ -4,7 +4,7 @@
   "description": "Finds first available shell command from a list.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test/all.js"
+    "test": "mocha test/all.js"
   },
   "repository": {
     "type": "git",

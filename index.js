@@ -17,7 +17,7 @@ module.exports = function(){
 
 function isExec(command){
   try{
-    exec(command)
+    exec(command, { stdio: 'ignore' })
     return true
   }
   catch (_e){
