@@ -1,6 +1,5 @@
 # find-exec
 
-[![Build Status](https://travis-ci.org/shime/find-exec.svg)](https://travis-ci.org/shime/find-exec)
 [![Downloads](https://img.shields.io/npm/dt/find-exec.svg)](https://npmjs.org/package/find-exec)
 
 Takes a list of shell commands and returns the first available. Works synchronously to respect the order.
