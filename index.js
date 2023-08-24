@@ -1,5 +1,6 @@
 var exec = require('child_process').execSync
 var platform = require('os').platform()
+var quote = require("shell-quote").quote
 
 module.exports = function(){
   var commands = Array.isArray(arguments[0]) ? arguments[0] : Array.prototype.slice.apply(arguments)
@@ -17,7 +18,7 @@ module.exports = function(){
 
 function isExec(command){
   try{
-    exec(command, { stdio: 'ignore' })
+    exec(quote(command.split(" ")), { stdio: 'ignore' })
     return true
   }
   catch (_e){
